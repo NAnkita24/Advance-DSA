@@ -13,6 +13,11 @@ public class Main {
 		list.display();
 		list.insertAtIndex(4,89);
 		list.display();
-		
+		list.getSize();
+		System.out.println(list.getValue(2));
+		System.out.println(list.getValue(0));
+		System.out.println(list.getValue(4));
+		list.getIndex(4);
+
 	}
 }
