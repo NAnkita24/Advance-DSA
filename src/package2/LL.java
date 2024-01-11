@@ -89,11 +89,7 @@ public class LL {
 		}
 	}
 
-	void deleteFirst() {
-		head.next = head;
-		head = null;
-
-	}
+	
 	void display() {
 		Node temp=head;
 		while (temp!=null) {

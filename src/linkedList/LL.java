@@ -1,7 +1,5 @@
 package linkedList;
 
-import java.security.PublicKey;
-
 public class LL {
 
 	Node head=null;
@@ -95,6 +93,16 @@ public class LL {
 
 	}
 
+	int deleteFirst() {
+		int val=head.data;
+		head = head.next;
+		if (head==null) {
+			tail=null;
+		}
+		size--;
+		return val;
+	}
+
 
 	public void display() {
 		Node node=head;
@@ -104,6 +112,28 @@ public class LL {
 			node=node.next;
 		}
 		System.out.print("END\n");
+	}
+
+	Node getNode(int index) {
+		Node temp=head;
+		for (int i = 0; i <index; i++) {
+			temp=temp.next;
+		}
+		return temp;
+	}
+
+	public int deleteLast() {
+		if (size == 1) {
+			return deleteFirst();	
+		}
+		Node temp=getNode(size-2);
+		int a = temp.next.data;
+
+		tail=temp;
+		temp.next=null;
+
+		size--;
+		return a;
 	}
 
 }
