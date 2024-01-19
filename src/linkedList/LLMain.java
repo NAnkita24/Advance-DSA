@@ -1,6 +1,6 @@
 package linkedList;
 
-public class Main {
+public class LLMain {
 	public static void main(String[] args) {
 		
 		LL list = new LL();
@@ -16,12 +16,10 @@ public class Main {
 //		System.out.println(list.deleteFirst());
 //		System.out.println(list.deleteFirst());
 //		System.out.println(list.deleteFirst());
-		System.out.println(list.deleteLast());
-		System.out.println(list.deleteLast());
-		System.out.println(list.deleteLast());
-		System.out.println(list.deleteLast());
-		System.out.println(list.deleteLast());
-
+//		System.out.println(list.deleteLast());
+//		System.out.println(list.deleteLast());
+//		System.out.println(list.deleteLast());
+		System.out.println(list.deleteAtIndex(2));
 		list.display();
 		
 //		list.getSize();

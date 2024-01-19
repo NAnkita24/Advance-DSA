@@ -102,6 +102,21 @@ public class LL {
 		size--;
 		return val;
 	}
+	
+	int deleteAtIndex(int index) {
+		if (index==0) {
+			return deleteFirst();
+		} 
+		if(index==size-1){
+			return deleteLast();
+		}
+
+		Node temp=getNode(index-1);
+		int a = temp.next.data;
+		temp.next=temp.next.next;
+
+		return a;
+		}
 
 
 	public void display() {
