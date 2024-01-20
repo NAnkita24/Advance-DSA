@@ -15,7 +15,7 @@ public class Main {
 
 //		System.out.println(l.getSize());
 //		l.getIndex(8);
-		l.deleteFirst();
+//		l.deleteFirst();
 		l.display();
 
 //		l.getValue(0);
