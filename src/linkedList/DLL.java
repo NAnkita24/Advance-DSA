@@ -96,6 +96,17 @@ public class DLL {
 	}
 
 	void deleteAtIndex(int index) {
+		
+		if (index==0) {
+			deleteAtFirst();
+			return;
+		}
+		
+		else if(index==size-1) {
+			deleteAtLast();
+			return;
+		}
+		
 		Node temp=getNode(index-1);
 		temp.next=temp.next.next;
 
