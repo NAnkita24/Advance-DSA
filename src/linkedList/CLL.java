@@ -26,6 +26,7 @@ public class CLL {
 		tail.next=node;
 		node.next=head;
 		head=node;
+		size++;
 
 	}
 
@@ -68,6 +69,69 @@ public class CLL {
 		node.next=head;
 		tail = node;
 		size++;
+	}
+
+	void deleteAtFirst() {
+		Node temp=head;
+		head=temp.next;
+		tail.next=head;
+		if (head==null) {
+			tail=null;
+		}
+		size--;
+	}
+
+	void deleteAtLast() {
+		Node temp=getNode(size-2);
+		temp.next=head;
+		temp=tail;	
+		if (tail==null) {
+			head=null;
+		}
+		size--;
+	}
+
+	void deleteAtIndex(int index) {
+		Node temp=getNode(index-1);
+		if (index==0) {
+			deleteAtFirst();
+		}
+		else if (index==size-1) {
+			deleteAtLast();
+		}
+		temp.next=temp.next.next;
+		size--;
+	}
+
+	int getIndex(int val) {
+		Node temp=head;
+		int count=0;
+		 if (val==head.data) {
+			return 0;
+		}
+		for (int i = 1; i < size; i++) {
+			temp=temp.next;
+			if (val==temp.data) {
+				count++;
+				return i;
+			}
+		}
+		if (count==0) {
+			return -1;
+		}
+
+		return count;
+	}
+	
+	int getValue(int index) {
+		Node temp=head;
+		
+		for (int i = 0; i <index; i++) {
+			temp=temp.next;
+		}
+		
+		return temp.data;
+		
 	}
 
 	void display() {
