@@ -54,17 +54,16 @@ public class Intersection1 {
 		Node temp2=head2;
 
 		for (int i = 0; i <size1; i++) {
-			
+			temp2=head2;
 			for (int j = 0; j <size2; j++) {
 				if (temp1==temp2) {
-//					System.out.println(temp1.val);
-					return temp1 .val;
+					return temp1.val;
 				}
 				temp2=temp2.next;
 			}
-			temp2=head2;
 			temp1=temp1.next;
 		}
+		
 		return -1;
 	}
 
