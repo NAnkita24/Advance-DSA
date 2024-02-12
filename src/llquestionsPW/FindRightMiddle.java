@@ -1,6 +1,6 @@
 package llquestionsPW;
 
-public class FindLeftMiddle {
+public class FindRightMiddle {
 	Node head;
 	static class Node{
 		int val;
@@ -34,11 +34,11 @@ public class FindLeftMiddle {
 //		f.next = g;
 		
 		display(a);
-		System.out.println(findNode(a,6));
+		System.out.println(findNode(a));
 
 	}
 
-	private static int findNode(Node head,int index) {
+	private static int findNode(Node head) {
 		Node slow=head;
 		Node fast=head;
 		

@@ -1,6 +1,8 @@
 package llquestionsPW;
 
-public class FindLefttMiddle {
+import java.util.Iterator;
+
+public class FindCycle {
 	Node head;
 	static class Node{
 		int val;
@@ -31,26 +33,26 @@ public class FindLefttMiddle {
 		c.next = d;
 		d.next = e;
 		e.next = f;
-//		f.next = g;
-		
-		display(a);
-		System.out.println(findNode(a));
+		f.next = g;
+		g.next = d;
+
+		System.out.println(findcyl(a));
 
 	}
 
-	private static int findNode(Node head) {
+	private static boolean findcyl(Node head) {
 		Node slow=head;
 		Node fast=head;
-		
-		while (fast.next!=null && fast.next.next!=null) {
+
+		while (fast!=null && fast.next!=null) {
 			slow=slow.next;
 			fast=fast.next.next;
-			
-		}
-		return slow.val;	
-		
+			if (slow == fast) {
+				return true;
+			}
+		}		
+		return false;
 	}
-
 
 	static void display(Node head){
 		Node temp = head;

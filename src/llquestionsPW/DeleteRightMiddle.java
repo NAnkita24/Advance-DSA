@@ -1,6 +1,8 @@
 package llquestionsPW;
 
-public class FindLefttMiddle {
+import java.util.Iterator;
+
+public class DeleteRightMiddle {
 	Node head;
 	static class Node{
 		int val;
@@ -31,26 +33,26 @@ public class FindLefttMiddle {
 		c.next = d;
 		d.next = e;
 		e.next = f;
-//		f.next = g;
-		
+		//		f.next = g;
+
 		display(a);
-		System.out.println(findNode(a));
+		findNode(a);
 
 	}
 
-	private static int findNode(Node head) {
+	private static void findNode(Node head) {
 		Node slow=head;
 		Node fast=head;
-		
-		while (fast.next!=null && fast.next.next!=null) {
+
+		while (fast.next.next!=null && fast.next.next.next!=null) {
 			slow=slow.next;
 			fast=fast.next.next;
-			
 		}
-		return slow.val;	
+		slow.next = slow.next.next;
 		
+		
+		display(head);
 	}
-
 
 	static void display(Node head){
 		Node temp = head;
