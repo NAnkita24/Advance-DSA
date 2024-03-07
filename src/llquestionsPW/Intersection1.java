@@ -47,23 +47,46 @@ public class Intersection1 {
 	}
 
 	static int intersection(Node head1, Node head2 ) {
-		int size1=getSize(head1);
-		int size2=getSize(head2);
-		
 		Node temp1=head1;
 		Node temp2=head2;
 
-		for (int i = 0; i <size1; i++) {
-			temp2=head2;
-			for (int j = 0; j <size2; j++) {
-				if (temp1==temp2) {
-					return temp1.val;
-				}
+		int size1=getSize(head1);
+		int	size2=getSize(head2);
+		int size3;
+		
+//		if(size1<size2) {
+//			size3=size2-size1;
+//			System.out.println(size3+" 1");
+//			for (int i = 1; i < size3-1; i++) {
+//				temp2=temp2.next;
+//			}
+//		}
+//		else {
+//			size3=size1-size2;
+//			System.out.println(size3+" 2");
+//
+//			for (int i = 0; i <size3; i++) {
+//				temp1=temp1.next;
+//			}
+//		}
+//		System.out.println(temp1.val+" "+temp2.val);
+		
+		for(int i=0; i<Math.abs(size1-size2);i++) {
+			if(size1>size2) {
+				temp1=temp1.next;
+			}else {
 				temp2=temp2.next;
 			}
-			temp1=temp1.next;
 		}
 		
+		
+		while (temp1!=null) {
+			temp1=temp1.next;
+			temp2=temp2.next;
+			if(temp1 == temp2) {
+				return temp1.val;
+			}
+		}
 		return -1;
 	}
 

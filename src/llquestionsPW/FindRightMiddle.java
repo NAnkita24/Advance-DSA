@@ -1,5 +1,7 @@
 package llquestionsPW;
 
+import java.util.Iterator;
+
 public class FindRightMiddle {
 	Node head;
 	static class Node{
@@ -31,26 +33,23 @@ public class FindRightMiddle {
 		c.next = d;
 		d.next = e;
 		e.next = f;
-//		f.next = g;
-		
+		f.next = g;
+
 		display(a);
-		System.out.println(findNode(a));
+		findNode(a);
 
 	}
 
-	private static int findNode(Node head) {
-		Node slow=head;
+	private static void findNode(Node head) {
 		Node fast=head;
-		
-		while (fast!=null && fast.next!=null) {
+		Node slow=head;
+
+		 while (fast!=null && fast.next!=null ) {
 			slow=slow.next;
 			fast=fast.next.next;
-			
 		}
-		return slow.val;	
-		
+		 System.out.println(slow.val);
 	}
-
 
 	static void display(Node head){
 		Node temp = head;
