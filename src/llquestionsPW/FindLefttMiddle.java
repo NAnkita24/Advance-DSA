@@ -31,24 +31,22 @@ public class FindLefttMiddle {
 		c.next = d;
 		d.next = e;
 		e.next = f;
-//		f.next = g;
+		f.next = g;
 		
 		display(a);
-		System.out.println(findNode(a));
+		findNode(a);
 
 	}
 
-	private static int findNode(Node head) {
+	private static void findNode(Node head) {
 		Node slow=head;
 		Node fast=head;
 		
-		while (fast.next!=null && fast.next.next!=null) {
-			slow=slow.next;
-			fast=fast.next.next;
-			
-		}
-		return slow.val;	
-		
+			while(fast.next!=null && fast.next.next!=null  ) {
+				slow=slow.next;
+				fast=fast.next.next;
+			}
+			System.out.println("Left Middle Node "+slow.val);
 	}
 
 

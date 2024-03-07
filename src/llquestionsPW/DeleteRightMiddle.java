@@ -41,17 +41,7 @@ public class DeleteRightMiddle {
 	}
 
 	private static void findNode(Node head) {
-		Node slow=head;
-		Node fast=head;
-
-		while (fast.next.next!=null && fast.next.next.next!=null) {
-			slow=slow.next;
-			fast=fast.next.next;
-		}
-		slow.next = slow.next.next;
 		
-		
-		display(head);
 	}
 
 	static void display(Node head){
