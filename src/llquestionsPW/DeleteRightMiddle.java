@@ -33,22 +33,23 @@ public class DeleteRightMiddle {
 		c.next = d;
 		d.next = e;
 		e.next = f;
-		f.next = g;
+//		f.next = g;
 
 		display(a);
-		findNode(a);
+		deleteRightMiddle(a);
 
 	}
 
-	private static void findNode(Node head) {
-		Node fast=head;
+	private static void deleteRightMiddle(Node head) {
 		Node slow=head;
-
-		 while (fast!=null) {
+		Node fast=head;
+		
+		while (fast.next.next!=null && fast.next.next.next!=null) {
 			slow=slow.next;
 			fast=fast.next.next;
 		}
-		 System.out.println(slow.val);
+		slow.next=slow.next.next;
+		display(head);
 	}
 
 	static void display(Node head){
