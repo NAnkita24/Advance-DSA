@@ -34,24 +34,22 @@ public class Cycle1 {
 		b.next = c;
 		c.next = d;
 		d.next = e;
-		e.next = f;
+		e.next = c;
 		
-		detectCycle(a);
-	}
+ System.out.println(detectCycle(a));	}
 	
-	static void detectCycle(Node head){
+	static int detectCycle(Node head){
 		Node slow=head;
 		Node fast=head;
-
-		while (fast!=null) {
+		while (fast!=null && fast.next!=null) {
 			slow=slow.next;
 			fast=fast.next.next;
+			
 			if (slow==fast) {
-				System.out.println("Cycle present");
-				return;
+				return 1;
 			}
 		}
-		System.out.println("No cycle");
+		return -1;
 	}
 	
 }

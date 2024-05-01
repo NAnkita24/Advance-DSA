@@ -1,3 +1,4 @@
+
 package llquestionsPW;
 
 import llquestionsPW.Template.Node;
@@ -34,7 +35,8 @@ public class Cycle2 {
 		b.next = c;
 		c.next = d;
 		d.next = e;
-		e.next = b;
+		e.next = f;
+		f.next = e;
 
 		detectCycle(a);
 	}
@@ -43,22 +45,18 @@ public class Cycle2 {
 		Node slow=head;
 		Node fast=head;
 
-		while (fast!=null && fast.next != null) {
+		while (fast!=null && fast.next!=null) {
 			slow=slow.next;
 			fast=fast.next.next;
+			
 			if (slow==fast) {
-				System.out.println("Cycle present");
 				break;
 			}
 		}
-		
 		slow=head;
-		while (fast != null) {
+		while (slow!=fast) {
 			slow=slow.next;
 			fast=fast.next;
-			if(slow == fast) {
-				break;
-			}
 		}
 		System.out.println(slow.val);
 	}
